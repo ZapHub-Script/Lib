@@ -21,12 +21,8 @@ Cp8FbS86tVV9YNrS.Name = "Cp8FbS86tVV9YNrS"
 Cp8FbS86tVV9YNrS.Parent = HKEacIER26vZwQfg
 Cp8FbS86tVV9YNrS.BackgroundTransparency = 1.000
 Cp8FbS86tVV9YNrS.LayoutOrder = 1
-if game.PlaceId == 11063612131 then
-	Cp8FbS86tVV9YNrS.Position = UDim2.new(0, 230, 0, 4)
-else
-	Cp8FbS86tVV9YNrS.Position = UDim2.new(0, 104, 0, 4)
-end
-Cp8FbS86tVV9YNrS.Size = UDim2.new(0, 86, 0, 32)
+Cp8FbS86tVV9YNrS.Position = UDim2.new(0, 230, 0, 4)
+Cp8FbS86tVV9YNrS.Size = UDim2.new(0, 100, 0, 32)
 e7I2r7yd4yBHwvk2.Name = "e7I2r7yd4yBHwvk2"
 e7I2r7yd4yBHwvk2.Parent = Cp8FbS86tVV9YNrS
 e7I2r7yd4yBHwvk2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
