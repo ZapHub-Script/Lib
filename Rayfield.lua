@@ -2491,9 +2491,11 @@ UserInputService.InputBegan:Connect(function(input, processed)
 	if (input.KeyCode == Enum.KeyCode.RightControl and not processed) then
 		if Debounce then return end
 		if Hidden then
+			jba9BYyFnyjcYMWR.Text = "Close"
 			Hidden = false
 			Unhide()
 		else
+			jba9BYyFnyjcYMWR.Text = "Open"
 			Hidden = true
 			Hide()
 		end
