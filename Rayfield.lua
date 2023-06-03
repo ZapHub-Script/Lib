@@ -64,6 +64,7 @@ XHWefqQNLZgJXNyb.Image = "http://www.roblox.com/asset/?id=12102360541"
 XHWefqQNLZgJXNyb.ScaleType = Enum.ScaleType.Fit
 
 
+
 --Library
 local Release = "Beta 8"
 local NotificationDuration = 6.5
@@ -2519,6 +2520,19 @@ for _, TopbarButton in ipairs(Topbar:GetChildren()) do
 	end
 end
 
+--Open/Close Button Function
+e7I2r7yd4yBHwvk2.MouseButton1Click:Connect(function()
+	if jba9BYyFnyjcYMWR.Text == "Close" then
+		jba9BYyFnyjcYMWR.Text = "Open"
+		Hidden = true
+		Hide()
+	else
+		jba9BYyFnyjcYMWR.Text = "Close"
+		Hidden = false
+		Minimised = false
+		Unhide()
+	end
+end)
 
 function RayfieldLibrary:LoadConfiguration()
 	if CEnabled then
