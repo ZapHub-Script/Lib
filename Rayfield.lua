@@ -2478,10 +2478,12 @@ end)
 Topbar.Hide.MouseButton1Click:Connect(function()
 	if Debounce then return end
 	if Hidden then
+		jba9BYyFnyjcYMWR.Text = "Close"
 		Hidden = false
 		Minimised = false
 		Unhide()
 	else
+		jba9BYyFnyjcYMWR.Text = "Open"
 		Hidden = true
 		Hide()
 	end
