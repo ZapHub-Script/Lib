@@ -1,4 +1,65 @@
--- This User Interface Library is brought to you by Solaris Software.
+--Open/Close Button
+if game.CoreGui:FindFirstChild("DydDBn2E5ubwZtxX") then
+	game.CoreGui["DydDBn2E5ubwZtxX"]:Remove()
+end
+local DydDBn2E5ubwZtxX = Instance.new("ScreenGui")
+local HKEacIER26vZwQfg = Instance.new("Frame")
+local Cp8FbS86tVV9YNrS = Instance.new("Frame")
+local e7I2r7yd4yBHwvk2 = Instance.new("TextButton")
+local eeUQHBz4bAaRDqy9 = Instance.new("UICorner")
+local jba9BYyFnyjcYMWR = Instance.new("TextLabel")
+local XHWefqQNLZgJXNyb = Instance.new("ImageLabel")
+DydDBn2E5ubwZtxX.Name = "DydDBn2E5ubwZtxX"
+DydDBn2E5ubwZtxX.Parent = game.CoreGui
+DydDBn2E5ubwZtxX.ResetOnSpawn = false
+DydDBn2E5ubwZtxX.IgnoreGuiInset = true
+HKEacIER26vZwQfg.Name = "HKEacIER26vZwQfg"
+HKEacIER26vZwQfg.Parent = DydDBn2E5ubwZtxX
+HKEacIER26vZwQfg.BackgroundTransparency = 1.000
+HKEacIER26vZwQfg.Size = UDim2.new(1, 0, 0, 36)
+Cp8FbS86tVV9YNrS.Name = "Cp8FbS86tVV9YNrS"
+Cp8FbS86tVV9YNrS.Parent = HKEacIER26vZwQfg
+Cp8FbS86tVV9YNrS.BackgroundTransparency = 1.000
+Cp8FbS86tVV9YNrS.LayoutOrder = 1
+Cp8FbS86tVV9YNrS.Position = UDim2.new(0, 230, 0, 4)
+Cp8FbS86tVV9YNrS.Size = UDim2.new(0, 100, 0, 32)
+e7I2r7yd4yBHwvk2.Name = "e7I2r7yd4yBHwvk2"
+e7I2r7yd4yBHwvk2.Parent = Cp8FbS86tVV9YNrS
+e7I2r7yd4yBHwvk2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+e7I2r7yd4yBHwvk2.BackgroundTransparency = 0.600
+e7I2r7yd4yBHwvk2.BorderSizePixel = 0
+e7I2r7yd4yBHwvk2.Size = UDim2.new(1, 0, 1, 0)
+e7I2r7yd4yBHwvk2.ZIndex = 10
+e7I2r7yd4yBHwvk2.AutoButtonColor = false
+e7I2r7yd4yBHwvk2.Text = ""
+e7I2r7yd4yBHwvk2.TextTransparency = 1.000
+eeUQHBz4bAaRDqy9.CornerRadius = UDim.new(0.25, 0)
+eeUQHBz4bAaRDqy9.Name = "eeUQHBz4bAaRDqy9"
+eeUQHBz4bAaRDqy9.Parent = e7I2r7yd4yBHwvk2
+jba9BYyFnyjcYMWR.Name = "jba9BYyFnyjcYMWR"
+jba9BYyFnyjcYMWR.Parent = e7I2r7yd4yBHwvk2
+jba9BYyFnyjcYMWR.AnchorPoint = Vector2.new(0, 0.5)
+jba9BYyFnyjcYMWR.BackgroundTransparency = 1.000
+jba9BYyFnyjcYMWR.ClipsDescendants = true
+jba9BYyFnyjcYMWR.Position = UDim2.new(0, 40, 0.5, 0)
+jba9BYyFnyjcYMWR.Size = UDim2.new(1, -52, 0.449999988, 7)
+jba9BYyFnyjcYMWR.ZIndex = 11
+jba9BYyFnyjcYMWR.Font = Enum.Font.GothamMedium
+jba9BYyFnyjcYMWR.Text = "Close"
+jba9BYyFnyjcYMWR.TextColor3 = Color3.fromRGB(255, 255, 255)
+jba9BYyFnyjcYMWR.TextSize = 14.000
+jba9BYyFnyjcYMWR.TextXAlignment = Enum.TextXAlignment.Left
+XHWefqQNLZgJXNyb.Name = "XHWefqQNLZgJXNyb"
+XHWefqQNLZgJXNyb.Parent = e7I2r7yd4yBHwvk2
+XHWefqQNLZgJXNyb.AnchorPoint = Vector2.new(0, 0.5)
+XHWefqQNLZgJXNyb.BackgroundTransparency = 1.000
+XHWefqQNLZgJXNyb.Position = UDim2.new(0, 12, 0.5, 0)
+XHWefqQNLZgJXNyb.Size = UDim2.new(0, 20, 0.629999995, 0)
+XHWefqQNLZgJXNyb.ZIndex = 11
+XHWefqQNLZgJXNyb.Image = "http://www.roblox.com/asset/?id=12102360541"
+XHWefqQNLZgJXNyb.ScaleType = Enum.ScaleType.Fit
+
+--Library
 local Solaris = Instance.new("ScreenGui")
 Solaris.Name = "dosage's solaris gui"
 Solaris.Parent = game.CoreGui
@@ -151,15 +212,13 @@ local SolarisLib = {
     },
     Settings = {
         Theme = "Default",
-        ShowFriendsOnLaunch = true,
+        ShowFriendsOnLaunch = false,
         ShowMusicOnLaunch = false,
         CloseBind = "RightControl"
     },
     Flags = {},
     CurrentTab
 }
-
-
 
 local MainUI = game:GetObjects("rbxassetid://7835727566")[1]
 print("SolarisLib Loaded!")
@@ -658,8 +717,23 @@ function SolarisLib:New(Config)
     MFrame.TopBar.ButtonHolder.CloseBtn.MouseButton1Click:Connect(function()
         uitoggled = not uitoggled
         MainUI.Visible = uitoggled
+        if jba9BYyFnyjcYMWR.Text == "Close" then
+            jba9BYyFnyjcYMWR.Text = "Open"
+        else
+            jba9BYyFnyjcYMWR.Text = "Close"
+        end
     end)
 
+    --Open/Close Button Function
+    e7I2r7yd4yBHwvk2.MouseButton1Click:Connect(function()
+    	uitoggled = not uitoggled
+        MainUI.Visible = uitoggled
+        if jba9BYyFnyjcYMWR.Text == "Close" then
+            jba9BYyFnyjcYMWR.Text = "Open"
+        else
+            jba9BYyFnyjcYMWR.Text = "Close"
+        end
+    end)
 
     function SearchConstructor()
         function StitchElements()
@@ -694,6 +768,11 @@ function SolarisLib:New(Config)
 		if (Input.KeyCode.Name == SolarisLib.Settings.CloseBind or Input.UserInputType.Name == SolarisLib.Settings.CloseBind) and not closebindbinding then
             uitoggled = not uitoggled
             MainUI.Visible = uitoggled
+            if jba9BYyFnyjcYMWR.Text == "Close" then
+                jba9BYyFnyjcYMWR.Text = "Open"
+            else
+                jba9BYyFnyjcYMWR.Text = "Close"
+            end
 		end
 	end)
 
