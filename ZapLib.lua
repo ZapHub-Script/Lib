@@ -885,7 +885,7 @@ function ZapLib:New(Config)
                 local Holding = false
                 local Button = game:GetObjects("rbxassetid://6937142338")[1]
                 Button.Parent = Section
-                Button.Name = text .. "element"
+                Button.Name = text .. "Button"
                 Button.ButtonText.Text = text
                 Button.ClipsDescendants = true
                 
@@ -912,7 +912,7 @@ function ZapLib:New(Config)
                 local Toggle,ToggleMain = {Value = false}, game:GetObjects("rbxassetid://6963155498")[1]
                 ToggleMain.Parent = Section
                 ToggleMain.ToggleText.Text = text
-                ToggleMain.Name = text .. "element"
+                ToggleMain.Name = text .. "Toggle"
 
                 function Toggle:Set(value)
 					Toggle.Value = value
@@ -943,7 +943,7 @@ function ZapLib:New(Config)
                 local Slider,SliderMain = {Value = start}, game:GetObjects("rbxassetid://6967573727")[1]
                 SliderMain.Parent = Section
                 SliderMain.SliderText.Text = text
-                SliderMain.Name = text .. "element"
+                SliderMain.Name = text .. "Slider"
                 local dragging = false
 
                 local function move(Input)
@@ -987,7 +987,7 @@ function ZapLib:New(Config)
                 local Dropdown,DropMain,OptionPreset = {Value = nil, Toggled = false, Options = list}, game:GetObjects("rbxassetid://7027964359")[1], game:GetObjects("rbxassetid://7021432326")[1]
                 DropMain.Parent = Section
                 DropMain.Btn.Title.Text = text
-                DropMain.Name = text .. "element"
+                DropMain.Name = text .. "Dropdown"
                 
 
                 local function ToggleDrop()
@@ -1062,7 +1062,7 @@ function ZapLib:New(Config)
                 local Dropdown,DropMain,OptionPreset = {Value = {}, Toggled = false, Options = list}, game:GetObjects("rbxassetid://7027964359")[1], game:GetObjects("rbxassetid://7021432326")[1]
                 DropMain.Parent = Section
                 DropMain.Btn.Title.Text = text
-                DropMain.Name = text .. "element"
+                DropMain.Name = text .. "MultiDropdown"
                 
 
                 local function ToggleDrop()
@@ -1145,7 +1145,7 @@ function ZapLib:New(Config)
                 ColorPreset.Hue.Visible, ColorPreset.Color.Visible = ColorPicker.Toggled, ColorPicker.Toggled
                 ColorPreset.Parent = Section
                 ColorPreset.Btn.Colorpicker.Text = text
-                ColorPreset.Name = text .. "element"
+                ColorPreset.Name = text .. "Colorpicker"
                 ColorPreset.Btn.Box.BackgroundColor3 = preset
                 ColorPreset.Hue.HueGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 0, 4)), ColorSequenceKeypoint.new(0.20, Color3.fromRGB(234, 255, 0)), ColorSequenceKeypoint.new(0.40, Color3.fromRGB(21, 255, 0)), ColorSequenceKeypoint.new(0.60, Color3.fromRGB(0, 255, 255)), ColorSequenceKeypoint.new(0.80, Color3.fromRGB(0, 17, 255)), ColorSequenceKeypoint.new(0.90, Color3.fromRGB(255, 0, 251)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 0, 4))}
                 local Color = ColorPreset.Color
@@ -1235,11 +1235,11 @@ function ZapLib:New(Config)
                 local Label, LabelFrame = {}, game:GetObjects("rbxassetid://7032552322")[1]
                 LabelFrame.Parent = Section
                 LabelFrame.Title.Text = text
-                LabelFrame.Name = text .. "element"
+                LabelFrame.Name = text .. "Label"
 
                 function Label:Set(tochange)
                     LabelFrame.Title.Text = tochange
-                    LabelFrame.Name = text .. "element"
+                    LabelFrame.Name = text .. "Label"
                 end    
 
                 
@@ -1256,7 +1256,7 @@ function ZapLib:New(Config)
                 local Textbox, TextboxFrame = {}, game:GetObjects("rbxassetid://7147292392")[1]
                 TextboxFrame.Parent = Section
                 TextboxFrame.Title.Text = text
-                TextboxFrame.Name = text .. "element"
+                TextboxFrame.Name = text .. "Textbox"
 
                 TextboxFrame.Box.Changed:Connect(function()
                     TextboxFrame.Box.Size = UDim2.new(0,TextboxFrame.Box.TextBounds.X + 16,0,22)
@@ -1298,7 +1298,7 @@ function ZapLib:New(Config)
                 local Bind, BindFrame = {Value, Binding = false, Holding = false}, game:GetObjects("rbxassetid://7126874744")[1]
                 BindFrame.Parent = Section
                 BindFrame.Title.Text = text
-                BindFrame.Name = text .. "element"
+                BindFrame.Name = text .. "Bind"
 
                 
 
