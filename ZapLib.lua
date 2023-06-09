@@ -61,7 +61,7 @@ XHWefqQNLZgJXNyb.ScaleType = Enum.ScaleType.Fit
 
 --Library
 local Zap = Instance.new("ScreenGui")
-Zap.Name = "ZapLib"
+Zap.Name = "ZapLibGui"
 Zap.Parent = game.CoreGui
 Zap.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
@@ -219,6 +219,8 @@ local ZapLib = {
     Flags = {},
     CurrentTab
 }
+
+
 
 local MainUI = game:GetObjects("rbxassetid://7835727566")[1]
 print("ZapLib Loaded!")
@@ -673,7 +675,7 @@ function ZapLib:New(Config)
         end   
         
         local general = Settings:Tab("General")
-        general:ToggleSetting("Show Music On Launch", "Shows the music menu when you load Snow Hub", true, "ShowMusicOnLaunch")
+        general:ToggleSetting("Show Music On Launch", "Shows the music menu when you load Snow Hub", false, "ShowMusicOnLaunch")
         general:BindSetting("Close Bind", "Hides/Shows the main window when pressed.", Enum.KeyCode.RightControl, "CloseBind")
         
         local appearance = Settings:Tab("Appearance")
@@ -726,7 +728,7 @@ function ZapLib:New(Config)
 
     --Open/Close Button Function
     e7I2r7yd4yBHwvk2.MouseButton1Click:Connect(function()
-    	uitoggled = not uitoggled
+    uitoggled = not uitoggled
         MainUI.Visible = uitoggled
         if jba9BYyFnyjcYMWR.Text == "Close" then
             jba9BYyFnyjcYMWR.Text = "Open"
@@ -765,7 +767,7 @@ function ZapLib:New(Config)
     
 
 	UserInputService.InputBegan:Connect(function(Input)
-		if (Input.KeyCode.Name == ZapLib.Settings.CloseBind or Input.UserInputType.Name == ZapLib.Settings.CloseBind) and not closebindbinding then
+        if (Input.KeyCode.Name == ZapLib.Settings.CloseBind or Input.UserInputType.Name == ZapLib.Settings.CloseBind) and not closebindbinding then
             uitoggled = not uitoggled
             MainUI.Visible = uitoggled
             if jba9BYyFnyjcYMWR.Text == "Close" then
@@ -773,8 +775,8 @@ function ZapLib:New(Config)
             else
                 jba9BYyFnyjcYMWR.Text = "Close"
             end
-		end
-	end)
+        end
+    end)
 
     spawn(function()
         while wait() do
@@ -819,11 +821,11 @@ function ZapLib:New(Config)
         local Tab = TabPreset:Clone()
         Tab.AutoButtonColor = false
         Tab.Parent = MFrame.TabMenu.Menu.Holder
-        Tab.Text = text
+        Tab.Text =  text
         Tab.TextSize = 14
-  
 
-        local Container = ContainerPreset:Clone()
+
+        local Container =  ContainerPreset:Clone()
         Container.Parent = MFrame.ContainerFolder
         Container.Visible = false
 
@@ -832,8 +834,8 @@ function ZapLib:New(Config)
             Container.Visible = true
             Tab.UIPadding.PaddingLeft = UDim.new(0,10)
             Tab.TextTransparency = 0
-            Tab.BackgroundTransparency = 0
-            ZapLib.CurrentTab = Container
+            Tab.BackgroundTransparency = 0  
+            ZapLib.CurrentTab = Container  
         end    
 
         spawn(function()
@@ -885,7 +887,7 @@ function ZapLib:New(Config)
                 local Holding = false
                 local Button = game:GetObjects("rbxassetid://6937142338")[1]
                 Button.Parent = Section
-                Button.Name = text .. "Button"
+                Button.Name = text .. "element"
                 Button.ButtonText.Text = text
                 Button.ClipsDescendants = true
                 
@@ -912,7 +914,7 @@ function ZapLib:New(Config)
                 local Toggle,ToggleMain = {Value = false}, game:GetObjects("rbxassetid://6963155498")[1]
                 ToggleMain.Parent = Section
                 ToggleMain.ToggleText.Text = text
-                ToggleMain.Name = text .. "Toggle"
+                ToggleMain.Name = text .. "element"
 
                 function Toggle:Set(value)
 					Toggle.Value = value
@@ -943,7 +945,7 @@ function ZapLib:New(Config)
                 local Slider,SliderMain = {Value = start}, game:GetObjects("rbxassetid://6967573727")[1]
                 SliderMain.Parent = Section
                 SliderMain.SliderText.Text = text
-                SliderMain.Name = text .. "Slider"
+                SliderMain.Name = text .. "element"
                 local dragging = false
 
                 local function move(Input)
@@ -987,7 +989,7 @@ function ZapLib:New(Config)
                 local Dropdown,DropMain,OptionPreset = {Value = nil, Toggled = false, Options = list}, game:GetObjects("rbxassetid://7027964359")[1], game:GetObjects("rbxassetid://7021432326")[1]
                 DropMain.Parent = Section
                 DropMain.Btn.Title.Text = text
-                DropMain.Name = text .. "Dropdown"
+                DropMain.Name = text .. "element"
                 
 
                 local function ToggleDrop()
@@ -1062,7 +1064,7 @@ function ZapLib:New(Config)
                 local Dropdown,DropMain,OptionPreset = {Value = {}, Toggled = false, Options = list}, game:GetObjects("rbxassetid://7027964359")[1], game:GetObjects("rbxassetid://7021432326")[1]
                 DropMain.Parent = Section
                 DropMain.Btn.Title.Text = text
-                DropMain.Name = text .. "MultiDropdown"
+                DropMain.Name = text .. "element"
                 
 
                 local function ToggleDrop()
@@ -1145,7 +1147,7 @@ function ZapLib:New(Config)
                 ColorPreset.Hue.Visible, ColorPreset.Color.Visible = ColorPicker.Toggled, ColorPicker.Toggled
                 ColorPreset.Parent = Section
                 ColorPreset.Btn.Colorpicker.Text = text
-                ColorPreset.Name = text .. "Colorpicker"
+                ColorPreset.Name = text .. "element"
                 ColorPreset.Btn.Box.BackgroundColor3 = preset
                 ColorPreset.Hue.HueGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 0, 4)), ColorSequenceKeypoint.new(0.20, Color3.fromRGB(234, 255, 0)), ColorSequenceKeypoint.new(0.40, Color3.fromRGB(21, 255, 0)), ColorSequenceKeypoint.new(0.60, Color3.fromRGB(0, 255, 255)), ColorSequenceKeypoint.new(0.80, Color3.fromRGB(0, 17, 255)), ColorSequenceKeypoint.new(0.90, Color3.fromRGB(255, 0, 251)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 0, 4))}
                 local Color = ColorPreset.Color
@@ -1235,11 +1237,11 @@ function ZapLib:New(Config)
                 local Label, LabelFrame = {}, game:GetObjects("rbxassetid://7032552322")[1]
                 LabelFrame.Parent = Section
                 LabelFrame.Title.Text = text
-                LabelFrame.Name = text .. "Label"
+                LabelFrame.Name = text .. "element"
 
                 function Label:Set(tochange)
                     LabelFrame.Title.Text = tochange
-                    LabelFrame.Name = text .. "Label"
+                    LabelFrame.Name = text .. "element"
                 end    
 
                 
@@ -1256,7 +1258,7 @@ function ZapLib:New(Config)
                 local Textbox, TextboxFrame = {}, game:GetObjects("rbxassetid://7147292392")[1]
                 TextboxFrame.Parent = Section
                 TextboxFrame.Title.Text = text
-                TextboxFrame.Name = text .. "Textbox"
+                TextboxFrame.Name = text .. "element"
 
                 TextboxFrame.Box.Changed:Connect(function()
                     TextboxFrame.Box.Size = UDim2.new(0,TextboxFrame.Box.TextBounds.X + 16,0,22)
@@ -1298,7 +1300,7 @@ function ZapLib:New(Config)
                 local Bind, BindFrame = {Value, Binding = false, Holding = false}, game:GetObjects("rbxassetid://7126874744")[1]
                 BindFrame.Parent = Section
                 BindFrame.Title.Text = text
-                BindFrame.Name = text .. "Bind"
+                BindFrame.Name = text .. "element"
 
                 
 
