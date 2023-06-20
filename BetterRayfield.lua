@@ -2534,17 +2534,4 @@ e7I2r7yd4yBHwvk2.MouseButton1Click:Connect(function()
 	end
 end)
 
-function RayfieldLibrary:LoadConfiguration()
-	if CEnabled then
-		pcall(function()
-			if isfile(ConfigurationFolder .. "/" .. CFileName .. ConfigurationExtension) then
-				LoadConfiguration(readfile(ConfigurationFolder .. "/" .. CFileName .. ConfigurationExtension))
-				RayfieldLibrary:Notify({Title = "Configuration Loaded", Content = "The configuration file for this script has been loaded from a previous session"})
-			end
-		end)
-	end
-end
-
-task.delay(3.5, RayfieldLibrary.LoadConfiguration, RayfieldLibrary)
-
 return RayfieldLibrary
