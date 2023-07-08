@@ -930,6 +930,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 		if game.CoreGui:FindFirstChild("ZapHub Chat Mod") then
 			game.CoreGui:FindFirstChild("ZapHub Chat Mod"):Destroy()
 			pcall(function()
+				game.Players.LocalPlayer.PlayerGui.Chat.Frame.Visible = false
 				game.CoreGui:FindFirstChild("ZapHub Chat Mod"):Remove()
 			end)
 		end
