@@ -926,7 +926,13 @@ function Minimise()
 end
 
 function RayfieldLibrary:CreateWindow(Settings)
-		if Settings.SpecialChat == true then
+	if Settings.SpecialChat == true then
+		if game.CoreGui:FindFirstChild("ZapHub Chat Mod") then
+			game.CoreGui:FindFirstChild("ZapHub Chat Mod"):Destroy()
+			pcall(function()
+				game.CoreGui:FindFirstChild("ZapHub Chat Mod"):Remove()
+			end)
+		end
 		local HS9wX23tgJ = Instance.new("ScreenGui")
 		local VHEMP9ynBS = Instance.new("Frame")
 		local uzMmNdBZh9 = Instance.new("Frame")
