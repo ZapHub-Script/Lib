@@ -2,6 +2,7 @@
 if game.CoreGui:FindFirstChild("DydDBn2E5ubwZtxX") then
 	game.CoreGui["DydDBn2E5ubwZtxX"]:Remove()
 end
+local StupidZapPosition = UDim2.new(0, 104, 0, 4)
 local DydDBn2E5ubwZtxX = Instance.new("ScreenGui")
 local HKEacIER26vZwQfg = Instance.new("Frame")
 local Cp8FbS86tVV9YNrS = Instance.new("Frame")
@@ -21,7 +22,7 @@ Cp8FbS86tVV9YNrS.Name = "Cp8FbS86tVV9YNrS"
 Cp8FbS86tVV9YNrS.Parent = HKEacIER26vZwQfg
 Cp8FbS86tVV9YNrS.BackgroundTransparency = 1.000
 Cp8FbS86tVV9YNrS.LayoutOrder = 1
-Cp8FbS86tVV9YNrS.Position = UDim2.new(0, 10, 0, 40)
+Cp8FbS86tVV9YNrS.Position = StupidZapPosition
 Cp8FbS86tVV9YNrS.Size = UDim2.new(0, 100, 0, 32)
 e7I2r7yd4yBHwvk2.Name = "e7I2r7yd4yBHwvk2"
 e7I2r7yd4yBHwvk2.Parent = Cp8FbS86tVV9YNrS
@@ -925,6 +926,55 @@ function Minimise()
 end
 
 function RayfieldLibrary:CreateWindow(Settings)
+		if Settings.SpecialChat == true then
+		local HS9wX23tgJ = Instance.new("ScreenGui")
+		local VHEMP9ynBS = Instance.new("Frame")
+		local uzMmNdBZh9 = Instance.new("Frame")
+		local TTmfv5ZjTn = Instance.new("TextButton")
+		local veFH9J6qyR = Instance.new("ImageLabel")
+		local N3CCC42Xbd = Instance.new("UICorner")
+		HS9wX23tgJ.Name = "ZapHub Chat Mod"
+		HS9wX23tgJ.Parent = game.CoreGui
+		HS9wX23tgJ.ResetOnSpawn = false
+		HS9wX23tgJ.IgnoreGuiInset = true
+		VHEMP9ynBS.Parent = HS9wX23tgJ
+		VHEMP9ynBS.BackgroundTransparency = 1.000
+		VHEMP9ynBS.Size = UDim2.new(1, 0, 0, 36)
+		uzMmNdBZh9.Parent = VHEMP9ynBS
+		uzMmNdBZh9.BackgroundTransparency = 1.000
+		uzMmNdBZh9.LayoutOrder = 1
+		uzMmNdBZh9.Position = UDim2.new(0, 60, 0, 4)
+		uzMmNdBZh9.Size = UDim2.new(0, 32, 0, 32)
+		TTmfv5ZjTn.Parent = uzMmNdBZh9
+		TTmfv5ZjTn.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+		TTmfv5ZjTn.BackgroundTransparency = 0.500
+		TTmfv5ZjTn.BorderSizePixel = 0
+		TTmfv5ZjTn.Size = UDim2.new(1, 0, 1, 0)
+		TTmfv5ZjTn.ZIndex = 10
+		TTmfv5ZjTn.AutoButtonColor = false
+		TTmfv5ZjTn.Text = ""
+		TTmfv5ZjTn.TextTransparency = 1.000
+		veFH9J6qyR.Parent = TTmfv5ZjTn
+		veFH9J6qyR.AnchorPoint = Vector2.new(0.5, 0.5)
+		veFH9J6qyR.BackgroundTransparency = 1.000
+		veFH9J6qyR.Position = UDim2.new(0.5, 0, 0.5, 0)
+		veFH9J6qyR.Size = UDim2.new(0.629999995, 0, 0.629999995, 0)
+		veFH9J6qyR.ZIndex = 11
+		veFH9J6qyR.Image = "rbxasset://textures/ui/TopBar/chatOff.png"
+		veFH9J6qyR.ScaleType = Enum.ScaleType.Fit
+		N3CCC42Xbd.CornerRadius = UDim.new(0.25, 0)
+		N3CCC42Xbd.Parent = TTmfv5ZjTn
+		TTmfv5ZjTn.MouseButton1Click:Connect(function()
+			if game.Players.LocalPlayer.PlayerGui.Chat.Frame.Visible == true then
+				game.Players.LocalPlayer.PlayerGui.Chat.Frame.Visible = false
+				veFH9J6qyR.Image = "rbxasset://textures/ui/TopBar/chatOff.png"
+			else
+				game.Players.LocalPlayer.PlayerGui.Chat.Frame.Visible = true
+				veFH9J6qyR.Image = "rbxasset://textures/ui/TopBar/chatOn.png"
+			end
+		end)
+	end
+	Cp8FbS86tVV9YNrS.Position = Settings.OpenButtonPosition or StupidZapPosition
 	local Passthrough = false
 	Topbar.Title.Text = Settings.Name
 	Main.Size = UDim2.new(0, 450, 0, 260)
